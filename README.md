@@ -8,6 +8,7 @@ Please read through each file before attempting to use it in your environment.
 Provider :AWS
 AMI Type :Centos 7
 Terraform version:2.59
+
 PREREQUISITES and  TASK:
 1 VPC
  6 Subnets
