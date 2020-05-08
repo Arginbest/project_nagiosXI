@@ -6,10 +6,12 @@ resource "aws_route_table" "private_route" {
     gateway_id = "${aws_internet_gateway.gw.id}"
   }
 
-  tags = "${var.tags}"
+  tags {
+    Name = "Private"
+  }
 }
 
-resource "aws_route_table" "public_route" {
+resource "aws_route_table" "Public" {
   vpc_id = "${aws_vpc.nagiosxi.id}"
 
   route {
@@ -17,5 +19,7 @@ resource "aws_route_table" "public_route" {
     gateway_id = "${aws_internet_gateway.gw.id}"
   }
 
-  tags = "${var.tags}"
+  tags {
+    Name = "Public"
+  }
 }

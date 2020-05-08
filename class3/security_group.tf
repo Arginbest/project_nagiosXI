@@ -1,6 +1,6 @@
-resource "aws_security_group" "datasource_class" {
+resource "aws_security_group" "nagios_project" {
   name        = "nagiosxi"
-  description = "Allow inbound SSH/HTTP"
+  description = "Allow inbound "
   vpc_id      = "${aws_vpc.nagiosxi.id}"
 
   ingress {
@@ -25,6 +25,4 @@ resource "aws_security_group" "datasource_class" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
-  tags = "${var.tags}"
 }
