@@ -3,15 +3,13 @@ resource "aws_route_table" "private_route" {
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = "${aws_internet_gateway.gw.id}"
+    gateway_id = "${aws_nat_gateway.gw.id}"
   }
 
-  tags {
-    Name = "Private"
-  }
+  tags = "${var.tags}"
 }
 
-resource "aws_route_table" "Public" {
+resource "aws_route_table" "public_route" {
   vpc_id = "${aws_vpc.nagiosxi.id}"
 
   route {
@@ -19,7 +17,5 @@ resource "aws_route_table" "Public" {
     gateway_id = "${aws_internet_gateway.gw.id}"
   }
 
-  tags {
-    Name = "Public"
-  }
+  tags = "${var.tags}"
 }

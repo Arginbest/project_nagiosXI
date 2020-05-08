@@ -1,6 +1,6 @@
-
-
-
+module "vpc" {
+  source = "./vpc"
+  
 region = "us-west-2"
 
 az1           =    "a"
@@ -21,4 +21,5 @@ tags = {
     Department   = "Febrary2020"
     Team         = "team2"
     Project      = "NagiosXI"
+}
 }

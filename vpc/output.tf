@@ -37,3 +37,4 @@ output "private_subnets" {
 output "Tags" {
   value = "${var.tags}"
 }
+

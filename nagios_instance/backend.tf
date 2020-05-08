@@ -1,8 +1,11 @@
-data "terraform_remote_state" "nagios_data" {
-  backend = "s3"
-  config = {
+terraform {
+  required_version = "0.11.14"
+
+  backend "s3" {
     bucket = "state-class-baurzhanclass"
-    key    = "path/to/my/key"
-    region = "us-east-1"
+    key    = "path/to/my/nagios/key"
+
+    dynamodb_table = "Baurstateclass"
+    region         = "us-east-1"
   }
 }

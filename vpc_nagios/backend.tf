@@ -5,7 +5,7 @@ terraform {
     bucket = "state-class-baurzhanclass"
     key    = "path/to/my/key"
 
-    # dynamodb_table = "Baurstateclass"
+    dynamodb_table = "Baurstateclass"
     region = "us-east-1"
   }
 }

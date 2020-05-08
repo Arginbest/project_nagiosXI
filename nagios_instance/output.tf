@@ -1,34 +1,58 @@
-# output "region" {
-#   value = "${data.terraform_remote_state.nagios_data.region}"
-# }
+output "region" {
+  value = "${data.terraform_remote_state.main.region}"
+}
 
-# output "NAT_WG" {  value = "${aws_nat_gateway.gw.id}"
-# }
-# output "IGW" {  value = "${aws_internet_gateway.gw.id}"
-# }
+output "NAT_WG" {
+  value = "${data.terraform_remote_state.main.NAT_WG}"
+}
 
-# output "vpc" {
-#   value = "${aws_vpc.nagiosxi.id}"
-# }
-# output "vpc_sec_group" {  value = "${aws_security_group.datasource_class.id}"
-# }
+output "IGW" {
+  value = "${data.terraform_remote_state.main.IGW}"
+}
 
-# output "public_subnets" {
-#   value = [
-#     "${aws_subnet.public1.id}",
-#     "${aws_subnet.public2.id}",
-#     "${aws_subnet.public3.id}",
-#   ]
-# }
+output "vpc" {
+  value = "${data.terraform_remote_state.main.vpc}"
+}
 
-# output "private_subnets" {
-#   value = [
-#     "${aws_subnet.private1.id}",
-#     "${aws_subnet.private2.id}",
-#     "${aws_subnet.private3.id}",
-#   ]
-# }
+output "vpc_sec_group" {
+  value = "${data.terraform_remote_state.main.vpc_sec_group}"
+}
 
-# output "Tags" {
-#   value = "${var.tags}"
-# }
+output "public_subnets" {
+  value = [
+    "${data.terraform_remote_state.main.public_subnets.0}",
+    "${data.terraform_remote_state.main.public_subnets.1}",
+    "${data.terraform_remote_state.main.public_subnets.2}",
+  ]
+}
+
+output "private_subnets" {
+  value = [
+    "${data.terraform_remote_state.main.private_subnets.0}",
+    "${data.terraform_remote_state.main.private_subnets.1}",
+    "${data.terraform_remote_state.main.private_subnets.2}",
+  ]
+}
+
+output "Tags" {
+  value = "${data.terraform_remote_state.main.Tags.Team}"
+}
+
+output "NagiosXI" {
+  value = "Installed"
+}
+
+output "Username" {
+  value = "nagiosadmin"
+}
+
+output "Password" {
+  value = "%OO4pg.TKvFPXD^oaHm5"
+}
+
+output "Instruction" {
+  value = ["Finalize your Nagios XI installation and step the initial configuration",
+    "These settings can be changed later with single command",
+    "/usr/local/nagiosxi/scripts/reset_nagiosadmin_password.php --password=newpassword",
+  ]
+}

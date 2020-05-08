@@ -1,4 +1,4 @@
-region = "us-west-2"
+region = "us-east-1"
 
 az1           =    "a"
 az2           =    "b"
