@@ -7,7 +7,7 @@ https://www.capterra.com/p/152793/Nagios-XI/
 Please read through each file before attempting to use it in your environment.
 Provider :AWS
 AMI Type :Centos 7
-Terraform version:2.59
+Terraform version:0.11
 
 PREREQUISITES and  TASK:
 1 VPC
